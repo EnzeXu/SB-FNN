@@ -122,38 +122,41 @@ model_name = "rep3"
 ...
 ```
 
-(2) Run Training. Please follow the following instructions or use command `python run.py --help` to parse all necessary arguments.
-
-```python
-parser.add_argument("--log_path", type=str, default="logs/test.txt", help="log path")
-parser.add_argument("--main_path", default="./", help="main_path")
-parser.add_argument("--seed", type=int, default=0, help="seed")
-parser.add_argument("--pinn", type=int, default=0, help="0=off 1=on")
-parser.add_argument("--activation",
-                    choices=["gelu", "elu", "relu", "sin", "tanh", "softplus", "adaptive_6", "adaptive_3",
-                             "adaptive_5", "adaptive_2", "selu"],
-                    type=str, default="gelu", help="activation plan")
-parser.add_argument("--cyclic", type=int, choices=[0, 1, 2], default=0, help="0=off 1=on")
-parser.add_argument("--stable", type=int, choices=[0, 1], default=0, help="0=off 1=on")
-parser.add_argument("--derivative", type=int, choices=[0, 1], default=0, help="0=off 1=on")
-parser.add_argument("--boundary", type=int, choices=[0, 1, 2], default=0, help="0=off 1=on")
-parser.add_argument("--skip_draw_flag", type=int, default=1, choices=[0, 1], help="0=off 1=on")
-parser.add_argument("--test", type=int, default=0, help="test mode will take a very small epoch for debugging")
-parser.add_argument("--init_lr", type=float, default=None, help="forced initial learning rate (it will take the initial_lr variable in Config if not set here)")
-parser.add_argument("--init_weights", type=str, default=None,
-                    choices=[None, "avg", "gelu", "elu", "relu", "sin", "tanh", "softplus"], help="init_weights")
-parser.add_argument("--init_weights_strategy", type=str, default="trainable", help="init_weights_strategy")
-parser.add_argument("--scheduler", type=str, default="cosine", choices=["cosine", "decade", "decade_pp", "fixed", "step"],
-                    help="scheduler")
-```
-
-Run training in your terminal.
+(2) Run Training. Please follow the following instructions or use command `python run.py --help` to see all possible arguments.
 
 ```shell
-(venv) ~/SB-FNN $ python run.py #
+(venv) ~/SB-FNN $ python run.py 
 ```
 
-(2) Collect the auto-generated training results in `saves/figure/` and `saves/train/`.
+You can run the code from the command line with various options. Here's a breakdown of the available command-line arguments:
+
+| Argument                | Description                                                                                                                                                                                                           |
+|-------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `--log_path`            | Specify the path to the log file. Default is "logs/test.txt".                                                                                                                                                         |
+| `--main_path`           | Set the main path for the script. Default is the current directory "./".                                                                                                                                              |
+| `--seed`                | Set the seed for random number generation. Default is 0.                                                                                                                                                              |
+| `--pinn`                | Enable or disable the use of Physics-Informed Neural Network (PINN). Set to 1 to enable and 0 to disable.                                                                                                             |
+| `--activation`          | Choose the activation function for the neural network. Available options are "gelu", "elu", "relu", "sin", "tanh", "softplus", "adaptive_6", "adaptive_3", "adaptive_5", "adaptive_2", and "selu". Default is "gelu". |
+| `--cyclic`              | Enable or disable cyclic behavior. Choose from 0 (off), 1 (on). Default is 0.                                                                                                                                         |
+| `--stable`              | Enable or disable stability settings. Choose from 0 (off) or 1 (on). Default is 0.                                                                                                                                    |
+| `--derivative`          | Enable or disable derivative settings. Choose from 0 (off) or 1 (on). Default is 0.                                                                                                                                   |
+| `--boundary`            | Enable or disable boundary settings. Choose from 0 (off), 1 (on). Default is 0.                                                                                                                                       |
+| `--skip_draw_flag`      | Enable or disable drawing flag. Choose from 0 (off) or 1 (on). Default is 0.                                                                                                                                          |
+| `--test`                | Enable test mode with a very small epoch for debugging. Set to 1 to enable and 0 to disable. Default is 0.                                                                                                            |
+| `--init_lr`             | Set the forced initial learning rate. If not set, it will take the `initial_lr` variable from Config.                                                                                                                 |
+| `--init_weights`        | Choose the type of initial weights for the neural network. Options are None, "avg", "gelu", "elu", "relu", "sin", "tanh", and "softplus".                                                                             |
+| `--init_weights_strategy` | Set the strategy for initializing weights. Default is "trainable".                                                                                                                                                    |
+| `--scheduler`           | Choose the scheduler for the learning rate. Options are "cosine", "decade", "decade_pp", "fixed", and "step". Default is "cosine".                                                                                    |
+
+
+You can combine these arguments according to your requirements to run the script with the desired settings. E.g.,
+
+```shell
+(venv) ~/SB-FNN $ python run.py --seed 999 --test 1 --cyclic 1
+```
+
+
+(3) Collect the auto-generated training results in `saves/figure/` and `saves/train/`.
 ```shell
 (venv) ~/SB-FNN $ ls saves/train/MODEL_NAME_YYYYMMDD_HHMMSS_f/
 (venv) ~/SB-FNN $ ls saves/figure/MODEL_NAME_YYYYMMDD_HHMMSS_f/

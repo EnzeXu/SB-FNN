@@ -36,7 +36,7 @@ def run(config, fourier_model, pinn_model):
     parser.add_argument("--stable", type=int, choices=[0, 1], default=0, help="0=off 1=on")
     parser.add_argument("--derivative", type=int, choices=[0, 1], default=0, help="0=off 1=on")
     parser.add_argument("--boundary", type=int, choices=[0, 1, 2], default=0, help="0=off 1=on")
-    parser.add_argument("--skip_draw_flag", type=int, default=1, choices=[0, 1], help="0=off 1=on")
+    parser.add_argument("--skip_draw_flag", type=int, default=0, choices=[0, 1], help="0=off 1=on")
     parser.add_argument("--test", type=int, default=0, help="test mode will take a very small epoch for debugging")
     parser.add_argument("--init_lr", type=float, default=None, help="forced initial learning rate (it will take the initial_lr variable in Config if not set here)")
     parser.add_argument("--init_weights", type=str, default=None,
