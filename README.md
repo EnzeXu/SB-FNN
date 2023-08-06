@@ -150,13 +150,13 @@ parser.add_argument("--scheduler", type=str, default="cosine", choices=["cosine"
 Run training in your terminal.
 
 ```shell
-(venv) ~/ChemGNN $ python run.py #
+(venv) ~/SB-FNN $ python run.py #
 ```
 
 (2) Collect the auto-generated training results in `saves/figure/` and `saves/train/`.
 ```shell
-(venv) ~/ChemGNN $ ls saves/train/MODEL_NAME_YYYYMMDD_HHMMSS_f/
-(venv) ~/ChemGNN $ ls saves/figure/MODEL_NAME_YYYYMMDD_HHMMSS_f/
+(venv) ~/SB-FNN $ ls saves/train/MODEL_NAME_YYYYMMDD_HHMMSS_f/
+(venv) ~/SB-FNN $ ls saves/figure/MODEL_NAME_YYYYMMDD_HHMMSS_f/
 ```
 
 ## 4.4 Apply Your ODE/PDE Equations to SB-FNN
