@@ -3,7 +3,7 @@ import json
 import torch
 import numpy as np
 
-from ..utils import myprint
+from ._utils import myprint
 
 
 class CustomEncoder(json.JSONEncoder):
