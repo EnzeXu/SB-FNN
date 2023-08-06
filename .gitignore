@@ -2,6 +2,7 @@
 .idea/*
 __MACOSX*
 *__pycache__/*
+SBFNN/__pycache__/*
 venv/*
 
 logs/*
