@@ -15,7 +15,7 @@ from scipy.stats import qmc
 from scipy.integrate import odeint
 
 
-from SBFNN.utils import ColorCandidate, myprint, MultiSubplotDraw, draw_two_dimension
+from ..utils._utils import ColorCandidate, myprint, MultiSubplotDraw, draw_two_dimension
 
 
 def sample_lhs(lb, ub, n, skip=100):

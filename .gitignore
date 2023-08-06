@@ -1,8 +1,8 @@
 .DS_Store
 .idea/*
 __MACOSX*
-*__pycache__/*
-SBFNN/__pycache__/*
+__pycache__/*
+
 venv/*
 
 logs/*
