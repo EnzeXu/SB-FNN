@@ -124,11 +124,7 @@ model_name = "rep3"
 
 (2) Run Training. Please follow the following instructions or use command `python run.py --help` to see all possible arguments.
 
-```shell
-(venv) ~/SB-FNN $ python run.py 
-```
-
-You can run the code from the command line with various options. Here's a breakdown of the available command-line arguments:
+You can run the script from the command line with various options. Here's a breakdown of the available command-line arguments:
 
 | Argument                | Description                                                                                                                                                                                                           |
 |-------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
